@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/gorilla/mux"
+	"github.com/ReynardtDeminey/go-bank/router"
 )
 
 func home(w http.ResponseWriter, r *http.Request) {
@@ -12,7 +12,6 @@ func home(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	r := mux.NewRouter()
-	r.HandleFunc("/", home)
-	http.ListenAndServe(":8080", r)
+	router.Router()
+
 }
